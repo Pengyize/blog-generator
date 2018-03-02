@@ -39,3 +39,11 @@ tags:
 3. 选中第一个响应
 4. 查看Headers里的Response Headers点view source可以看到响应的前两部分，Request Headers点view source可以看到请求
 5. 查看Response你可以看到响应的第四部分
+
+### 6. DNS(Domain Name System)
+DNS即是通过域名找IP地址
+有两个命令：
+`nslookup www.baidu.com`
+`ping www.baidu.com`
+输入这两个命令都会返回baidu的IP地址![nslookup](/images/nslookup)Server是你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近的那几台的IP）。
+但可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给假IP）

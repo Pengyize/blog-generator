@@ -27,11 +27,12 @@ q. `hexo d` 完成第二篇上传～
 先在本地删除，然后进入博客目录依次
 a. `hexo g`
 b. `hexo d`
-###### 3. 下载已有的博客
+######3. 下载已有的博客
 a. 终端进入Desktop
 b. 复制源代码仓库的SSH地址，`git clone 源代码地址`
-c. 进入下载的目录 `npm install hexo --save`
-d. 就可以按照上面1.m的方法创建新博客了
+c.运行`npm install -g hexo-cli`安装 Hexo  
+d.进入下载的目录 `npm install hexo --save`
+e. 就可以按照上面1.n的方法创建新博客了
 
 ###### 4.第一次建立博客后创建源代码仓库
 1.创建名叫 blog-generator 的空仓库
