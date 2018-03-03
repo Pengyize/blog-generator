@@ -78,4 +78,4 @@ theme: hexo-theme-alex
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:Pengyize/pengyize.github.io.git
+  repo: https://github.com/Pengyize/pengyize.github.io.git
