@@ -4,7 +4,7 @@ date: 2018-03-02 16:47:09
 tags:
 ---
 ### 1. HTTP(HyperText Transfer Protocol)
-是一种协议，它教客户端如何请求、服务器如何相应。
+是一种协议，它教客户端如何请求、服务器如何响应。
 
 ### 2. 状态码
 是服务器对浏览器说的话：
@@ -17,7 +17,7 @@ tags:
 5xx，服务器错了
 
 ### 3. 请求的格式
-1 GET或POST   路径   协议(HTTP)/版本号
+1 GET或POST   路径(/)   协议(HTTP)/版本号
 2 Host: www.baidu.com
 2 key: value
 2 ....: ....
@@ -45,5 +45,5 @@ DNS即是通过域名找IP地址
 有两个命令：
 `nslookup www.baidu.com`
 `ping www.baidu.com`
-输入这两个命令都会返回baidu的IP地址![nslookup](/images/nslookup.png)Server是你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近的那几台的IP）。
-但可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给假IP）
+输入这两个命令都会返回baidu的IP地址![nslookup](/images/nslookup.png)Server你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近几台服务器的IP）。
+可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给你假IP）
