@@ -3,7 +3,7 @@ title: HTML元素
 date: 2018-03-06 08:36:58
 tags:
 ---
-## 1.<iframe>和<a>的target
+## 1. iframe 和 a 的target
 iframe标签支持相对路径
 
 `<iframe name="xxx" src="" frameborder="0"></iframe>  `
@@ -19,7 +19,7 @@ index3里写:
 `<a href="http://qq.com" target=_parent>QQ</a>`点击会在index2的嵌套页面打开
 `<a href="http://qq.com" target=_top>QQ</a>`点击会在index1里打开
 
-## 2.<a>的href
+## 2. a 的href
 1. `<a href="//qq.com">QQ</a>`href里写的是无协议地址，意思是当前用的是http协议就自动继承http协议，用的是file就会用file协议。
 我们在终端运行`sudo npm i -g http-server`即可安装一个服务器，进入你写index.html的文件夹里运行`http-server`即可开启服务器，然后在浏览器浏览终端返回的地址即可用http协议来访问你写的文件
 
@@ -30,11 +30,11 @@ index3里写:
  `<a href="javascript:;">qq</a>`点击之后a不会做任何事情
 `<a href="javascript:alert(1)";>qq</a>`点击之后会弹出1
 
-## 3.<form> <input>
-**1. <form>和<a>的区别：**
-<a>提交时是GET请求
-<form>可以发送POST请求
-<form>里必须要有一个submit才能被提交
+## 3. form input
+**1. form 和 a 的区别：**
+a提交时是GET请求
+form可以发送POST请求
+form里必须要有一个submit才能被提交
 ```
 <form action="users" method="post">
     <input type="text"value="username">
@@ -42,7 +42,7 @@ index3里写:
     <input type="submit" value="提交">
 </form>
 ```
-即<form>是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；
+即form是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；
 ```
 <form action="users?name=pyz" method="post">
     <label>用户名<input type="text" name="username"></label>
@@ -50,12 +50,12 @@ index3里写:
     <input type="submit" value="提交">
 </form>
 ```
-**<input>要提交的话一定要有name值！**
-<label>可以直接包在input外面
-<form>里的target和<a>是一模一样的。
-<form>里如果没有`<input type="submit">`而有<button>，则<button>会默认为submit，若写成这样`<button type="button">button</button>`则不会成为submit，一个form里必须要有一个submit才能提交
+**input要提交的话一定要有name值！**
+label可以直接包在input外面
+form里的target和a是一模一样的。
+form里如果没有`<input type="submit">`而有<button>，则button会默认为submit，若写成这样`<button type="button">button</button>`则不会成为submit，一个form里必须要有一个submit才能提交
 
-**2. <input>  checkbox**
+** 2. input的checkbox属性**
  
 ```
 <label><input type="checkbox" name="apple" value="yes">苹果</label>
@@ -67,7 +67,7 @@ index3里写:
 
 ![提交之后](/images/提交之后.png)
 
-**3.<input> radio**
+** 3. input radio**
 ```
 <label><input type="radio" name="sexual">男</label>
 <label><input type="radio" name="sexual">女</label>
@@ -76,7 +76,7 @@ index3里写:
 
 ![<radio>](/images/radio.png)
 
-## 4. <select>
+## 4. select
 ```
 <select name="group" multiple>
     <option value="">-</option>
@@ -88,7 +88,7 @@ index3里写:
 ```
 ![<select>](/images/select.png)disabled属性意味着不能被选中，selected意思是默认选中的，multiple意思是可以同时选中几项
 
-## 5. <textarea>
+## 5. textarea
 若想让用户输入一大段文字则用这个元素
 ```
 <textarea style="resize: none; width: 200px; height: 100px;"  name="hobbies"></textarea>
@@ -96,7 +96,7 @@ index3里写:
 ![<textarea>](/images/textarea.png)
 resize若不设置为none，则用户可以随意更改输入框的大小
 
-## 6. <table>
+## 6. table
 ```
 <table border="1">
     <colgroup>
@@ -129,4 +129,4 @@ resize若不设置为none，则用户可以随意更改输入框的大小
 </table>
 ```
 ![<table>](/images/table.png)
-<thead>  <tbody> <tfoot>不写浏览器也不会报错，而会自动全部加入到tbody里
+thead  tbody tfoot不写浏览器也不会报错，而会自动全部加入到tbody里
