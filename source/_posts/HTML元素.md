@@ -61,11 +61,11 @@ index3里写:
 <label><input type="checkbox" name="apple" value="yes">苹果</label>
 <label><input type="checkbox" name="banana" value="yes">香蕉</label>
 ```
-![<checkbox>](/images/checkbox)
+![<checkbox>](/images/checkbox.png)
 
 一定要有name才能被提交上去
 
-![提交之后](/images/提交之后)
+![提交之后](/images/提交之后.png)
 
 **3.<input> radio**
 ```
@@ -74,7 +74,7 @@ index3里写:
 ```
 和checkbox不同的是，两个name一样的radio只能选中一个
 
-![<radio>](/images/radio)
+![<radio>](/images/radio.png)
 
 ## 4. <select>
 ```
@@ -86,14 +86,14 @@ index3里写:
     <option value="4" selected>第四组</option>
 </select>
 ```
-![<select>](/images/select)disabled属性意味着不能被选中，selected意思是默认选中的，multiple意思是可以同时选中几项
+![<select>](/images/select.png)disabled属性意味着不能被选中，selected意思是默认选中的，multiple意思是可以同时选中几项
 
 ## 5. <textarea>
 若想让用户输入一大段文字则用这个元素
 ```
 <textarea style="resize: none; width: 200px; height: 100px;"  name="hobbies"></textarea>
 ```
-![<textarea>](/images/textarea)
+![<textarea>](/images/textarea.png)
 resize若不设置为none，则用户可以随意更改输入框的大小
 
 ## 6. <table>
@@ -128,5 +128,5 @@ resize若不设置为none，则用户可以随意更改输入框的大小
     </tfoot>
 </table>
 ```
-![<table>](/images/table)
+![<table>](/images/table.png)
 <thead>  <tbody> <tfoot>不写浏览器也不会报错，而会自动全部加入到tbody里
