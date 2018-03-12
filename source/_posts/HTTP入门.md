@@ -16,22 +16,43 @@ tags:
 404，你（访问者）错了
 5xx，服务器错了
 
+把200～500每一个的前6个背下来，如：200~205
+
 ### 3. 请求的格式
-1 GET或POST   路径(/)   协议(HTTP)/版本号
-2 Host: www.baidu.com
-2 key: value
-2 ....: ....
-....
-3（断行）
-4  要上传的数据
+1. GET请求
+GET / HTTP/1.1
+Host: baidu.com
+Accept: text/html
+（断行）
+
+2. POST请求
+POST /login HTTP/1.1
+Host: baidu.com
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Content-Length: ...
+
+   username=pyz&password=123
+
+**请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！**
 
 ### 4.响应的格式
-1 协议(HTTP)/版本号  状态码  状态解释
-2 key: value
-2 Content-Length: ...
-2 Content-Type: text/html或application/x-JavaScript
-3 （断行）
-4 下载的内容
+1. GET请求的
+HTTP/1.1 200 OK
+Content-Length: ...
+Content-Type: text/html或application/x-JavaScript; charset=utf-8
+（断行）
+<!DOCTYPE html>
+<html>...</html>
+
+2. POST请求
+若密码错了
+HTTP/1.1 403 Forbidden
+Content-Type: application/json
+Content-Length: ...
+
+   {''error"}
+
 
 ### 5. 如何查看响应和请求
 1. 打开Network
