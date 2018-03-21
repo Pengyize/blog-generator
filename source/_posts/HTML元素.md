@@ -7,17 +7,18 @@ tags:
 iframe标签支持相对路径
 
 `<iframe name="xxx" src="" frameborder="0"></iframe>  `
-`<a href="" target="xxx"></a>`点击a
-则会在iframe里弹出
-index里写:
-`<iframe src="./index2" frameborder="0"></iframe>  `则会在左上角出现一个小的嵌套页面显示index2里嵌套的index3里的四个QQ链接
-index2里写:
+`<a href="" target="xxx"></a>`点击a，则新页面会在iframe里出现
+
+若index.html里写:
+`<iframe src="./index2" frameborder="0"></iframe>  `
+index2.html里写:
 `<iframe src="./index3" frameborder="0"></iframe>`
-index3里写:
-`<a href="http://qq.com" target=_blank>QQ</a>`点击会在一个新的标签页面里打开
-`<a href="http://qq.com" target=_self>QQ</a>`点击会在index3的嵌套页面打开
-`<a href="http://qq.com" target=_parent>QQ</a>`点击会在index2的嵌套页面打开
-`<a href="http://qq.com" target=_top>QQ</a>`点击会在index1里打开
+index3.html里写:
+`<a href="http://qq.com" target=_blank>QQ</a>`（点击会在一个新的标签页面里打开）
+`<a href="http://qq.com" target=_self>QQ</a>`（点击会在index3的嵌套页面里打开）
+`<a href="http://qq.com" target=_parent>QQ</a>`（点击会在index2的嵌套页面里打开）
+`<a href="http://qq.com" target=_top>QQ</a>`（点击会在index里打开）
+在index的左上角出现一个小的嵌套页面里显示着index2页面里嵌套的index3里的四个QQ链接
 
 ## 2. a 的href
 1. `<a href="//qq.com">QQ</a>`href里写的是无协议地址，意思是当前用的是http协议就自动继承http协议，用的是file就会用file协议。
@@ -130,3 +131,24 @@ resize若不设置为none，则用户可以随意更改输入框的大小
 ```
 ![<table>](/images/table.png)
 thead  tbody tfoot不写浏览器也不会报错，而会自动全部加入到tbody里
+
+
+## 7.Canvas
+不要用css来调整canvas的宽高，因为若用css，canvas里的东西都会被拉伸，和img一样，可以用js来设置宽高
+```
+function autoSetCanvasSize(canvas) {
+    setCanvasSize();
+    window.onresize = function () {   //浏览器改变窗口大小时触发onresize事件
+        setCanvasSize()
+    };
+
+
+    function setCanvasSize() {
+        var pageWidth = document.documentElement.clientWidth;     //代表浏览器的宽
+        var pageHeight = document.documentElement.clientHeight;   //代表浏览器的高
+        canvas.width = pageWidth;
+        canvas.height = pageHeight;
+    }
+
+}
+```
