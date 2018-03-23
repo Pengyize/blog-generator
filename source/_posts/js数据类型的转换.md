@@ -1,5 +1,5 @@
 ---
-title: js数据类型的转换
+title: JS数据类型的转换
 date: 2018-03-21 14:06:01
 tags:
 ---
@@ -59,7 +59,7 @@ obj + ''       // '[object Object]'
 
 ## 3. 转换成boolean
 #### 官方：
-总共只有5个falsy值，0、NaN、''、null、undefined，所有对象都是true
+总共只有6个falsy值，0、NaN、''、null、undefined，**除了这6个，其它值都是true。所有对象都是true，包括var n = new Boolean(false)，n也是true**
 ```
 Boolean(1)          //        true
 Boolean(2)          //        true
@@ -77,7 +77,7 @@ Boolean({})         //        空对象true
 Boolean([])         //        空数组true
 ```
 #### 老司机：
-取反两次，总共只有5个falsy值，0、NaN、''、null、undefined，所有对象都是true
+取反两次，总共只有6个falsy值，0、NaN、''、null、undefined，**除了这6个，其它值都是true。所有对象都是true，包括var n = new Boolean(false)，n也是true**
 ```
 !!1          //        true
 !!0          //        false
