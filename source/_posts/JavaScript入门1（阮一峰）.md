@@ -68,7 +68,7 @@ var c = 0x11         // c === 17，0x代表16进制
 只能用person[key]来表示，因为使用方括号运算符时key会被当作变量来处理。
 
 > bug1: typeof null     //object
-bug2: typeof function     //function，但function其实应该是object
+bug2: typeof function      //function，function也是object的一种，但function有自己的原型
  
 >{foo:123}，javascript理解为语句（即代码块）
 ({foo:123})，JavaScript理解为对象

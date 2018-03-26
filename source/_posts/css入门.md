@@ -6,13 +6,13 @@ tags:
 ## 1. CSS简介
 css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多个模块单独升级，统称为CSS3，现在已经有很多模块升级到了CSS4。[css文档](https://www.w3.org/Style/CSS/specs.en.html)
 
-## 2. 第一步
+## 2. 编写CSS的第一步
 给你要写的css标签加上border
 `border:1px solid red;`
 让你知道它在哪、它的大小、形状
 
 ## 3. 使几个元素在同一排
-当你想要一个列表排在同一排时，给那几个元素全加上style=float:left/right，然后给他们的父元素加上class:clearfix。
+当你想要一个列表排在同一排时，给那几个元素全加上`style=float:left;`，然后给他们的父元素加上`class:clearfix`,下面是clearfix的css
 ```
 .clearfix::after{
   content: "";
@@ -24,7 +24,7 @@ css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多�
 div（块级元素）：高度是由内部文档流元素高度的总和决定的。文档流：文档内元素的流动方向，内联元素是从左往右，块级元素是从上往下
  span（内联元素）：高度是由其中文字高度决定的，内联元素设置width和height是无效的，上下的margin和padding也无效，要将它们设为display:inline-block才有效。
 ## 5. 小提醒
-尽量不写height和width，会引出很多问题，要宽高的时候用padding，另外span元素设置宽高的时候要将它设为display:inline-block，因为内联元素是不能设置宽高的，inline-block具有inline的同行特性，也具有block的高度特性。
+尽量不写height和width，这两个属性会引出很多bug，要宽高的时候可以用padding，另外span元素设置padding的时候要将它设为display:inline-block，因为内联元素不能设置宽高，inline-block具有inline的同行特性，也具有block的高度特性。
 对于display:inline(内联元素)的元素，设置width/height/上下margin和padding都是无效的
 ## 6. 居中
 1. 让一个背景图居中，并且让它自适应屏幕
@@ -66,7 +66,7 @@ margin-right:auto;
     ```
     text-align:center;
     ```
-    若不是内联元素想让它居中，则加display:inline-block，加了之后一般还要加下面这句，不然可能会有bug（下面空出一行）
+    若不是内联元素想让它居中，则加display:inline-block，加了之后一般还要加下面这句，不然可能会有bug（下面可能会空出一行）
     ```
     vertical-align: top;
     ```
@@ -97,13 +97,12 @@ div{
 `position:fixed`
 2. 相对于父级元素定位：
 在父级元素加上：`position:relative`
-给自己加上：`position:absolute  `（绝对定位之后就会变成display:block）
+给自己加上：`position:absolute  `（绝对定位后元素会变成display:block）
 
 ## 9. 使用::before和::after时
-要加上
+要加上这两行的代码，才会显示内容
 ```
 content: "";
-display:block;    //如果是绝对定位就不用加，因为绝对定位是display:block;
+display:block;    //如果是绝对定位就不用加，因为绝对定位后元素会变成display:block;
 ```
-这样才会显示内容
 
