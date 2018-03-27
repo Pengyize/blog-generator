@@ -19,7 +19,9 @@ tags:
 - window.comfirm
 - window.console.log
 
-## 3. Number
+## 3. 上面两种全局变量都是stack（栈内存）里的重要变量
+
+## 4. Number
 JavaScript的作者Brendan Eich被公司要求JS要像Java，所以他模仿java写了
 `var n = new Number(1);`这样n是一个对象，有自己的属性，但太麻烦，于是他又写了一种
 `var n =1;`n是基本类型
@@ -35,7 +37,7 @@ n.xxx = 2;      //可以的
 n.xxx           //但undefined，因为xxx是存在temp的，上一句的temp执行完后就被抹杀，所以xxx也被抹杀了
 ```
 
-## 4. String
+## 5. String
 
 ```
 var s = 'asd';      //     原理和Number一样
@@ -69,7 +71,7 @@ s1.toLowerCase();      //    全变成小写
 s1.toUpperCase();      //    全变成大写
 ```
 
-## 5. Boolean
+## 6. Boolean
 6个falsy值，0、NaN、null、undefined、false、""，除了这6个，其他值都是true
 **所有对象都是true**
 ```
@@ -80,7 +82,7 @@ if(b1){console.log('true')};      // true
 //只会输出b1，因为所有对象都是true！！
 ```
 
-## 6. Object
+## 7. Object
 ```
 var o1 = {};      //常用方法
 var o2 = new Object();

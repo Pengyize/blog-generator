@@ -51,7 +51,7 @@ alert(b.x);       // [object,Object]，b是引用的a的旧地址，所以b有
 var a = function(){};
 var a = null;
 
- 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾
+ 这样上面那个function因为没有被任何东西引用，所以function占的内存就是垃圾，会被浏览器回收
 
 ```
 下面是面试题
