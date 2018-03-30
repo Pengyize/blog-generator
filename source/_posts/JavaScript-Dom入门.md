@@ -12,38 +12,38 @@ tags:
 Node.ELEMENT_NODE === 1  //true，元素节点
 Node.TEXT_NODE === 3     //true，元素中的文本
 
-xxx.nodeType === 3     //可用来检验xxx是一个元素节点还是元素中的文本
+xxx.nodeType === 3       //可用来检验xxx是一个元素节点还是元素中的文本
 ```
 
 # 3. 
 ul的tagName为'UL'（大写！）
 
 `let brother = li.getElementsByTagName('UL')[0];`
-getElementsByTagName这个API返回的是一个数组，所以要写上[0]
+getElementsByTagName这个API搜索的是li元素的后代，并按顺序返回所有的ul，返回的是一个数组，要写上[0]
 
 # 4. 
 ```
 a.href     //这样获取href，浏览器会给href加上http协议
-a.getAttribute('href')    //这样获取的才是href本身
+a.getAttribute('href')  //这样获取的才是href本身
 
 ```
 
 # 5.
 ```
 liTags[i].onmouseenter = function (x) {
-      console.log(x.target);           //x.target是我们操作的那个元素，若a里包含了个span，那操作的就是span
-      console.log(x.currentTarget);    //x.currentTarget是我们监听的元素，就是liTags[i]这个元素
+      console.log(x.target);       //x.target是我们操作的那个元素，若a里包含了个span，那操作的就是span
+      console.log(x.currentTarget) //x.currentTarget是我们监听的元素，就是liTags[i]这个元素
 }
 ```
 
 # 6.
 用JS完成页面内的跳转
 ```
-let aTags = document.querySelectorAll('nav.menu > ul > li > a');    //获取所有a标签，返回的是一个数组
-for(let i=0;i<aTags.length;i++) {      //因为aTags是数组，所以要用for循环，同时监听到数组里的所有元素
-    aTags[i].onclick = function (x) {  //监听a标签被鼠标点击的动作
-        x.preventDefault();            //防止默认动作（跳转）
-        let a = x.currentTarget;       //当前监听的元素a
+let aTags = document.querySelectorAll('nav.menu > ul > li > a');   //获取所有a标签，返回的是一个数组
+for(let i=0;i<aTags.length;i++) {     //因为aTags是数组，所以要用for循环，同时监听到数组里的所有元素
+    aTags[i].onclick = function (x) { //监听a标签被鼠标点击的动作
+        x.preventDefault();           //防止默认动作（跳转）
+        let a = x.currentTarget;      //当前监听的元素a
         let href = a.getAttribute('href');  //获取a的href值
         let element = document.querySelector(href);  //获取带有这个href值的标签 例：'#siteAbout'
         let top = element.offsetTop; //获取这个标签的底端到整个页面顶端的距离（固定值）
@@ -70,7 +70,7 @@ let say = setInterval(() => {
 
 # 9. Tween.js
 [缓动动画速查表](http://easings.net/zh-cn)
-1. 在[cdn](cdnjs.com)里搜tween，下载并在html中引用
+1. 在[cdn](cdnjs.com)里搜tween，并在html中引用
 2. 在[github-tween](https://github.com/tweenjs/tween.js/)中查看使用教程
  
 # 10. 选择器
@@ -103,4 +103,3 @@ var getSiblings = function (elem) {
 var elem = document.querySelector('#some-element');
 var siblings = getSiblings(elem);
 ```
-

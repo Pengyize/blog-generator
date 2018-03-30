@@ -107,3 +107,7 @@ DNS即是通过域名找IP地址
 `ping www.baidu.com`
 输入这两个命令都会返回baidu的IP地址![nslookup](/images/nslookup.png)Server你的路由，相当于路由问了电信公司，于是下面返回的就是baidu的IP地址（baidu有很多台服务器，会返回离你最近几台服务器的IP）。
 可以通过修改你电脑上的hosts文件，绕过DNS，直接指定一个域名的IP（因为有时候电信会给你假IP）
+修改hosts文件，mac终端：`vi ~/etc/hosts`
+在里面添加一行
+123.123.123 baidu.com
+保存退出，再ping baidu.com，返回的就会是123.123.123了，这样就绕过了DNS
