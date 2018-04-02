@@ -239,12 +239,12 @@ f.call(undefined,1,2);  //这两种调用方式等价
 ```
 
 # 13. this和arguments
-this是call()的第一个参数
+**this是call()的第一个参数**
 ```
 f = function(){
     console.log(this);
 }
-f.call(undefined);    //在正常模式下打印出window对象
+f.call(undefined);    //正常模式下，若传入的是null或undefined，打印出来的就是window
 
 f = function(){
     'use strict'
@@ -252,7 +252,30 @@ f = function(){
 }
 f.call(undefined);    //严格模式打印出undefined
 ```
-arguments是伪数组
+面试题1：
+```
+var obj = {
+  foo: function(){
+    console.log(this)
+  }
+}
+
+var bar = obj.foo
+obj.foo() // 打印出obj，因为转换为 obj.foo.call(obj)，this 就是 obj
+bar()   //打印出window，转换为 bar.call()，由于没有传东西，所以 this 就是 undefined，最后浏览器给你一个默认的 this —— window 对象
+```
+面试题2:
+```
+function fn (){ console.log(this) }
+var arr = [fn, fn2]
+arr[0]() // 这里面的 this 又是什么呢？
+```
+我们可以把 arr[0]( ) 想象为arr.0( )，虽然后者的语法错了，但是形式与转换代码一样，于是：
+```
+arr.0.call(arr);
+//this就是arr
+```
+**arguments是伪数组**
 ```
 f = function(){
     console.log(arguments);

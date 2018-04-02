@@ -52,7 +52,7 @@ Object()    //{}
 
     let a = Array(3)  //创建了一个长度为3的空数组
     a.length    //3
-    a[0]/a[1]/a[2]    //undefined
+    a[0]    //undefined
     0 in a    //false
 
     let a = new Array(3)     //和上面一样
@@ -60,8 +60,7 @@ Object()    //{}
     第二种用法：
     ```
     let a = Array(3,3);    //[3,3]，length为2
-    //这和第一种不同，叫做不一致性，JS的垃圾              之处
-    //Array前加new和不加new没区别
+    //这和第一种一样的写法，功能却不同，不一致性，JS的垃圾之处
     ```
 2. 什么是数组？![数组.png](/images/数组.png)数组就是对象，是拥有特殊原型链的对象,有Array.prototype的就是数组，没有的就不是数组
 3. 伪数组
@@ -114,7 +113,7 @@ forEach
     var c = a.concat(b);    //'1,2,3,3,4,5'
 
     //concat可以用来深拷贝数组
-    var d = a.concat([]);    //'1,2,3'，d和a的值一样，但d和a是两个数组
+    var d = a.concat([]);    //'1,2,3'，d和a的值一样，但d和a是两个数组，所以concat可以用来深拷贝数组
     ```
     map（映射）
     ```
@@ -146,7 +145,7 @@ forEach
     var a = [1,2,3];
     a.reduce(function(sum,n){
         return sum + n ;
-    },0)    //6，求和，0是初始值，sum是每次传进来的值，n是要加上的数
+    },0)    //6，求和，0是初始值，第一次传给sum的就是0，sum是每次传进来的值，之后传给sum的是return里的值，n是遍历的数
     
      a.reduce((sum,n) => sum + n ,0)    //6，箭头函数的写法
     ```
