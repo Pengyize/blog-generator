@@ -24,7 +24,8 @@ css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多�
 div（块级元素）：高度是由内部文档流元素高度的总和决定的。文档流：文档内元素的流动方向，内联元素是从左往右，块级元素是从上往下
  span（内联元素）：高度是由其中文字高度决定的，内联元素设置width和height是无效的，上下的margin和padding也无效，要将它们设为display:inline-block才有效。
 ## 5. 小提醒
-尽量不写height和width，这两个属性会引出很多bug，要宽高的时候可以用padding，另外span元素设置padding的时候要将它设为display:inline-block，因为内联元素不能设置宽高，inline-block具有inline的同行特性，也具有block的高度特性。
+尽量不写height和width，这两个属性会引出很多bug，要宽高的时候可以用padding，但img最好先写width，因为可以先占位，因为引用图片时浏览器不知道图片大小，所有等图片下载完成，它后面的元素又要重新排位置，若先写好width，则不用重排，知道height也可以先写好height。
+另外span元素设置padding的时候要将它设为display:inline-block，因为内联元素不能设置宽高，inline-block具有inline的同行特性，也具有block的高度特性。
 对于display:inline(内联元素)的元素，设置width/height/上下margin和padding都是无效的
 ## 6. 居中
 1. 让一个背景图居中，并且让它自适应屏幕
@@ -104,5 +105,27 @@ div{
 ```
 content: "";
 display:block;    //如果是绝对定位就不用加，因为绝对定位后元素会变成display:block;
+```
+
+## 10. 图片的轮播
+\<html\>
+```
+<div class="window">
+    <div class="images" id=images>
+        <img1>
+        <img2>
+        <img3>
+    </div>
+</div>
+```
+\<css\>
+**要给window的div和每个img都定好宽高！并给window加上overflow:hidden**
+```
+.images{
+    display: flex;    //给image的div加上这个图片才能横这放！
+}
+.images > img{
+    width: 100%;
+}
 ```
 
