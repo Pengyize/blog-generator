@@ -434,6 +434,7 @@ var p1 = Person('张三');
 p1.setAge(25);
 p1.getAge() // 25
 ```
+函数Person的内部变量_age，通过闭包getAge和setAge，变成了返回对象p1的私有变量。
 
 # 16. 同名参数
 ```

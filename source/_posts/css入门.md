@@ -11,8 +11,8 @@ css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多�
 `border:1px solid red;`
 让你知道它在哪、它的大小、形状
 
-## 3. 使几个元素在同一排
-当你想要一个列表排在同一排时，给那几个元素全加上`style=float:left;`，然后给他们的父元素加上`class:clearfix`,下面是clearfix的css
+## 3. 使导航栏在同一行
+当你想要一个列表排在同一行时，给所有li加上css`float:left;`，然后必须要给ul加上class:`clearfix`,下面是clearfix的css
 ```
 .clearfix::after{
   content: "";
@@ -20,6 +20,7 @@ css2.1是目前世界上应用最广泛的版本，2011年开始css被分为多�
   clear: both;
 }
 ```
+但若ul是`display:fiex`，则要把clearfix去掉，因为clearfix的::after会占用一行里最后一小块空间
 ## 4. 高度
 div（块级元素）：高度是由内部文档流元素高度的总和决定的。文档流：文档内元素的流动方向，内联元素是从左往右，块级元素是从上往下
  span（内联元素）：高度是由其中文字高度决定的，内联元素设置width和height是无效的，上下的margin和padding也无效，要将它们设为display:inline-block才有效。
@@ -71,7 +72,16 @@ margin-right:auto;
     ```
     vertical-align: top;
     ```
-
+5. 让导航栏在同一行里均匀分布
+给ul加css
+```
+ul{
+  display:flex;  
+  justyfy-content:space-between;
+}
+```
+不用给li加`float:left`
+也不用给ul加`clearfix`
 ## 7. 用css做三角形
 1. 等腰三角形：
 ```

@@ -13,7 +13,7 @@ o1.toString === o2.toString   //true
 ```
 Object.prototype === o1.__proto__     //true，是把prototype的地址赋给__proto__属性了
 ```
-所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number、String、的特有公有属性也是它们的prototype属性在引用，同理有
+所以它们最终指向的Object的公有属性，就是Object.prototype（原型），Number、String的特有公有属性也是它们的prototype属性在引用，同理有
 ```
 Number.prototype.__proto__ === Object.prototype //true，是把Object.prototype的地址赋给Number的__proto__属性了
 

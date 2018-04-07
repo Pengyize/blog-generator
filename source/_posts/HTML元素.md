@@ -24,18 +24,19 @@ index3.html里写:
 1. `<a href="//qq.com">QQ</a>`href里写的是无协议地址，意思是当前用的是http协议就自动继承http协议，用的是file就会用file协议。
 我们在终端运行`sudo npm i -g http-server`即可安装一个服务器，进入你写index.html的文件夹里运行`http-server`即可开启服务器，然后在浏览器浏览终端返回的地址即可用http协议来访问你写的文件
 
-2. `<a href="?name=pyz">qq</a>`点击之后会在当前页面发起?name=pyz的请求
-`<a href="#sss">qq</a>`点击之后不会发起请求，因为锚点仅仅是在当前页面内的跳转
-**`<a href="/..">link</a> 标签被点击后会浏览器会发起GET / HTTP/1.1的请求，因为/是根，无法再..**
+2. href
+a. `<a href="?name=pyz">qq</a>`点击之后会在当前页面发起?name=pyz的请求
+b. `<a href="#sss">qq</a>`点击之后不会发起请求，因为锚点仅仅是在当前页面内的跳转
+c. `<a href="/..">link</a> `**标签被点击后浏览器会发起GET / HTTP/1.1的请求，路径还是/，因为/已经是根目录，无法再往前退**
 3. 伪协议
  `<a href="javascript:;">qq</a>`点击之后a不会做任何事情
 `<a href="javascript:alert(1)";>qq</a>`点击之后会弹出1
 
-## 3. form input
-**1. form 和 a 的区别：**
-a提交时是GET请求
-form可以发送POST请求
-form里必须要有一个submit才能被提交
+## 3.\<form\> 
+**1. \<form\>和\<a\>的区别：**
+\<a\>提交时是GET请求
+\<form\>可以用method='post'发送POST请求
+\<form\>里必须要有一个submit按钮才能被提交
 ```
 <form action="users" method="post">
     <input type="text"value="username">
@@ -43,7 +44,7 @@ form里必须要有一个submit才能被提交
     <input type="submit" value="提交">
 </form>
 ```
-即form是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；
+即\<form\>是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；
 ```
 <form action="users?name=pyz" method="post">
     <label>用户名<input type="text" name="username"></label>
@@ -51,12 +52,14 @@ form里必须要有一个submit才能被提交
     <input type="submit" value="提交">
 </form>
 ```
-**input要提交的话一定要有name值！**
-label可以直接包在input外面
-form里的target和a是一模一样的。
-form里如果没有`<input type="submit">`而有<button>，则button会默认为submit，若写成这样`<button type="button">button</button>`则不会成为submit，一个form里必须要有一个submit才能提交
+**2. \<input\>要提交的话一定要有name值**
+\<label\>直接包在input外面用
+\<form\>里的target和\<a\>是一模一样的。
+\<form\>里如果没有`<input type="submit">`而有\<button\>，则\<button\>会默认为submit，若写成这样`<button type="button">button</button>`则不会成为submit，一个form里必须要有一个submit按钮才能提交
 
-** 2. input的checkbox属性**
+
+## 4. <\input\>
+** 1. checkbox**
  
 ```
 <label><input type="checkbox" name="apple" value="yes">苹果</label>
@@ -68,7 +71,7 @@ form里如果没有`<input type="submit">`而有<button>，则button会默认为
 
 ![提交之后](/images/提交之后.png)
 
-** 3. input radio**
+** 2. radio**
 ```
 <label><input type="radio" name="sexual">男</label>
 <label><input type="radio" name="sexual">女</label>

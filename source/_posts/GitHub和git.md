@@ -19,7 +19,7 @@ tags:
 `git config --global core.editor "vim"`
 
 ### 三. 使用git的三种方法
-###### 1. 在本地使用
+###### 1. 建立本地仓库
 a. 在桌面创建git-demo目录`mkdir git-demo`
 b. `cd git-demo`
 c. `git init`
@@ -31,7 +31,7 @@ h. `git pull`先把github上的文件拉下来（一般可忽略）
 i. `git push`推上去
 
 ###### 2. 将本地仓库上传到github
-a. 在github上创建一个仓库
+a. 先确保有本地仓库，再在github上创建一个仓库
 b. name和电脑上的目录名一样，其他东西不动，创建
 c. 点击SSH地址！然后复制页面上这行代码运行`git remote add origin git@github.com:xxxxxxxxx/git-demo-1.git`
 d. 复制第二行 `git push -u origin master`运行
