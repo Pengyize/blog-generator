@@ -40,5 +40,5 @@ var div = $div[0]  //这样jquery就转换成了DOM对象，或div = $div.get(0)
 ```
 dom转jquery
 ```
-var $div = &(div);  //这样dom对象div，就转换成了jquery对象
+var $div = $(div);  //这样dom对象div，就转换成了jquery对象
 ```
