@@ -4,7 +4,7 @@ date: 2018-04-09 14:38:54
 tags:
 ---
 # 1. DOM0时代html和js的那些事儿
-\<html\>
+<html\>
 ```
 <head>
     <script>
@@ -19,7 +19,7 @@ tags:
   <button id="z" onclick="print.call()">c</button>  //'hi'
 </body>
 ```
-\<js\>
+<js\>
 ```
 x.onclick = print;  //js里这样是执行函数，输出'hi'
 x.onclick = print();  //这样写是得到函数的返回值，undefined
@@ -57,7 +57,7 @@ grand1.addEventListener('click',function fn1(){
     console.log('爷爷')
 },true)
 ```
-![addEventListener(true)](/images/addEventListener(true).png)
+![addEventListener(true)](/images/true.png)
 这样执行顺序就是爷爷 -> 儿子 -> 爸爸。
 左边的（加true的顺序），叫做捕获阶段，右边叫冒泡阶段。
 - **面试题2：若给同一个div加上true和false呢？**
