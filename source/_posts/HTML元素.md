@@ -41,18 +41,27 @@ c. `<a href="/..">link</a> `**标签被点击后浏览器会发起GET / HTTP/1.1
 <form action="users" method="post">
     <input type="text"value="username">
     <input type="password"value="password">
-    <input type="submit" value="提交">
+    <input type="submit" value="提交">	
+</form>	//form被提及一定会刷新当前页面
+
+//若不想刷新页面的话，可以添加一个iframe，然后把form指向它，不过这种方法已过时
+<iframe name="result" src="about:blank" frameborder="0" height="200"></iframe>
+
+<form action="users" method="post" target="resule">
+......
 </form>
+
+//较新方法，用JSONP（动态创建script）
 ```
 即\<form\>是注册时用的，你提交的账号密码会出现在第四部分里，但GET请求是不会有第四部分的，POST若想有查询参数，可以直接写在action里，如；
 ```
 <form action="users?name=pyz" method="post">
-    <label>用户名<input type="text" name="username"></label>
+    <label>用户名<input type="text" name="username"></label>	//input要被提及的话一定要有那么值
     <label>密码<input type="password" name="password"></label>
     <input type="submit" value="提交">
 </form>
 ```
-**2. \<input\>要提交的话一定要有name值**
+**2. \<input\>要被提交的话一定要有name值**
 \<label\>直接包在input外面用
 \<form\>里的target和\<a\>是一模一样的。
 \<form\>里如果没有`<input type="submit">`而有\<button\>，则\<button\>会默认为submit，若写成这样`<button type="button">button</button>`则不会成为submit，一个form里必须要有一个submit按钮才能提交
