@@ -73,7 +73,7 @@ Accept: application/json
 Content-Type: application/x-www-form-urlencoded
 Content-Length: ...
 
-   username=pyz&password=123
+   username=pyz&password=123（第四部分服务器返回的是字符串）
 
 **请求里的路径只是路径而已，跟文件没有关系，文件格式只和Accept里写的有关系！！**
 ### 4.响应的格式
@@ -81,9 +81,9 @@ Content-Length: ...
 HTTP/1.1 200 OK
 Content-Length: ...
 Content-Type: text/html或application/x-JavaScript; charset=utf-8
-（断行）
+（断行）      => 这是第三部分
 <!DOCTYPE html>
-<html>...</html>
+<html>...</html>（第四部分服务器返回的是字符串）
 
 2. POST
 若密码错了
