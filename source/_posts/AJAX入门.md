@@ -41,12 +41,15 @@ Jesse James Garrett将这个技术取名为AJAX：异步的JavaScript和XML。
 2. request.open('GET','/xxx')  //初始化request
 3. request.send()  //发送请求
 4. request.onreadystatechange  //监听请求状态的变化
-5. request.readyState === 4  //说明响应完成
-6. request.status  //响应返回的HTTP状态码
+5. request.readyState === 1  //request.open()已经完成
+6. request.readyState === 2  //request.send()已经完成
+7. request.readyState === 3  //request.responseText正在下载
+5. request.readyState === 4  //响应完成
+6. request.status  //HTTP状态码
 7. var string = request.responseText  //响应的内容
-1. var value = JSON.parse(request.responseText)  //把符合JSON语法的字符串转换成JS，解析响应返回的内容
-2. value.node   //若value是对象，这就是对象里内容
-3. value.node.name  //对象里的name的值
+8. var value = JSON.parse(request.responseText)  //把符合JSON语法的字符串转换成JS，解析响应返回的内容
+9. value.node   //若value是对象，这就是对象里内容
+10. value.node.name  //对象里的name的值
 ```
 
 # 4. 同源策略

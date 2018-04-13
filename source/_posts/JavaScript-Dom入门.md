@@ -82,7 +82,7 @@ document.documentElement.nodeName    //'HTML'
 - **9. cloneNode()**
 ```
 var div2 = div1.cloneNode();  //会把div1本身复制给div2
-var div2 = div1.cloneNode(true);  //会把div1及它的所有子节点一起复制给div2
+var div2 = div1.cloneNode(true);  //会把div1及它的所有子节点一起复制给div2，这句等于var div2=div1;
 ```
 - **10. isSameNode()和isEqualNode()**
 isEqualNode检测内容是否相同

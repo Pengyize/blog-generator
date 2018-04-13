@@ -165,14 +165,16 @@ a.reduce(function(arr,n){
 ```
 只要掌握reduce就行了
 8. splice
-```
-array.splice(start)
-array.splice(start, deleteCount) 
-array.splice(开始的位置, 删除的个数, 插入的对象1,插入的对象2, ...)
-```
+    ```
+    array.splice(start)  //start第一个位置是0
+    array.splice(start, deleteCount) //若不写删除的个数，则会把包括start位置的数据和后面的所有数据都删除，并返回它们
+    array.splice(开始的位置, 删除的个数, 插入的数据1, 插入的数据2, 3...)
+    ```
+    **splice会改变数组本身的数据！！**
 9. slice
-```
-array.slice()  //保留完整数组
-array.slice(4)  //保留4到最后的数组
-array.slice(4,8)  //保留4到8以前的数组
-```
+**slice不会改变数组本身数据！！**
+    ```
+    array.slice()  //或array.slice(0)，返回完整数组
+    array.slice(4)  //返回位置4到最后的数据
+    array.slice(4,8)  //返回位置4到8以前的数据（不包括8）
+    ```
