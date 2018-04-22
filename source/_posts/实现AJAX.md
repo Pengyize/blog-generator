@@ -39,7 +39,7 @@ requeset.responseText
 1. 封装ajax
 ```
 jQuery.ajax=function({url,method,body,headers}){
-  return new Promise(function(resolve,reject)){
+  return new Promise(function(resolve,reject){
     let request = new XMLHttpRequest()
     request.open(method,url)  //配置request
     for(let key in headers){
@@ -78,10 +78,5 @@ $.ajax({
   (request)=>{
     console.log('error'); return 'error'  //失败就执行这个
   }
-).then(
-  (上面的then成功返回的responseText)=>{
-    console.log(上面的then成功返回的responseText)  //上一个then成功就执行这个
-  },
-  (request) => {console.log('error2')}  //上一个then失败就执行这个
-)  //then可以无限用，第一个参数表示调用成功成功后执行的东西，第二个表示失败后执行的东西
+)
 ```

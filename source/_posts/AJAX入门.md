@@ -24,17 +24,16 @@ Jesse James Garrett将这个技术取名为AJAX：异步的JavaScript和XML。
 # 3. 用的是JSON
 ### 1. JSON是抄袭了JavaScript的一门语言
 **区别：**
-1. JSON没有抄袭function和undefined
+1. JSON没有抄袭function和undefined和symbol
 2. JSON的字符串首尾必须用双引号"pyz" 
 3. JSON有6种数据类型
 - null
 - number
 - string（必须用双引号）
-- true
-- false
+- boolean(true false)
 - array（["a","b"]）
 - object（{"name":"pyz"}）
-4. JSON没有symbol，没有函数，没有undefined，也没有原型。
+4. JSON没有原型
 ### 2. API
 ```
 1. let request = new XMLHttpRequest();

@@ -169,7 +169,7 @@ name
    function f(o) {
      o.p = 2;
    }
-   f(obj);
+   f(obj);  //相当于把obj的地址传进去
 
    obj.p // 2
    ```
@@ -191,7 +191,7 @@ var p = 2;
 function f(p) {
   p = 3;
 }
-f(p);
+f(p);  //基本类型，所以传进去的不是地址而只是p的值
 
 p // 2
 ```
@@ -304,7 +304,7 @@ function f4() {
 
 f1.call();    //??
 ```
-答案：1
+答案：undefined（f1的console.log）、1(f4的console.log)
 
 ## 面试题2:
 ```
@@ -322,7 +322,7 @@ function f4() {
 a=2;
 f1.call();    //？
 ```
-答案：2
+答案：undefined、2
 
 ## 面试题3:
 html

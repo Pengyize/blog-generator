@@ -44,24 +44,24 @@ Object()    //{}
 
 ## 6. Array
 **1. 用法**
-    第一种用法：
-    ```
-    let a = ['a','b'];    //['a','b']
-    let b = new Array('a','b');   //['a','b']
-    //上面两种写法效果是一样的
+  第一种用法：
+  ```
+  let a = ['a','b'];    //['a','b']
+  let b = new Array('a','b');   //['a','b']
+  //上面两种写法效果是一样的
 
-    let a = Array(3)  //创建了一个长度为3的空数组
-    a.length    //3
-    a[0]    //undefined
-    0 in a    //false
+  let a = Array(3)  //创建了一个长度为3的空数组
+  a.length    //3
+  a[0]   //undefined
+  0 in a    //false
 
-    let a = new Array(3)     //和上面一样
-    ```
-    第二种用法：
-    ```
-    let a = Array(3,3);    //[3,3]，length为2
-    //这和第一种一样的写法，功能却不同，不一致性，JS的垃圾之处
-    ```
+  let a = new Array(3)     //和上面一样
+  ```
+  第二种用法：
+  ```
+  let a = Array(3,3);    //[3,3]，length为2
+  //这和第一种一样的写法，功能却不同，不一致性，JS的垃圾之处
+  ```
 **2. 什么是数组？**![数组.png](/images/数组.png)数组就是对象，是拥有特殊原型链的对象,有Array.prototype的就是数组，没有的就不是数组
 **3. 伪数组**
 ```
