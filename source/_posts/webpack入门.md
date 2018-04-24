@@ -38,7 +38,9 @@ touch src/index.js
 //运行webpack
 npx webpack  //这时会多出dist目录，里面有bundle.js文件
 ```
-3. 在index.js里写
+
+# 3. 使用
+1. 在index.js里写
 ```
 console.log(1)
 
@@ -48,7 +50,7 @@ npx webpack
 //再看bundle.js，这时会多出来一行console.log(1) 
 ```
 
-4. 用babel-loader，我用的是 [7.x branch](https://github.com/babel/babel-loader/tree/7.x) for docs with Babel v6
+2. 安装babel-loader自动转换es6，我用的是 [7.x branch](https://github.com/babel/babel-loader/tree/7.x) for docs with Babel v6
 ```
 //安装v6，命令行
 npm install babel-loader babel-core babel-preset-env webpack
@@ -98,7 +100,7 @@ module.exports = {
 若出现`can't find '...'`或`can't resolve '...'`的报错，则安装省略号里的东西`npm i '省略号'`
 **注意：**若是` Couldn't find preset "env"`，不要安装env，而是`npm i babel-preset-env`
 
-5. 
+3. 使用babel
 ```
 //当你在写index.js里写
 let a=1
