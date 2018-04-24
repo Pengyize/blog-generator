@@ -18,12 +18,12 @@ SCSS是Sass推出的一个全新的语法，更加贴近css，所以一般都是
 - `cd ~/Desktop/scss-demo`
 - `mkdir scss css`
 - `touch scss/style.scss`
-- `node-sass -wr scss -o css`（开始监听style.scss）
+- `node-sass style.scss style.css -w style.scss`（开始监听style.scss）
 
 # 3. 使用
 终端进入含css和scss文件的目录，执行
-`node-sass -wr scss -o css`（开始监听style.scss）
-在目录里打开style.scss文件开始编辑，node-scss就会自动给css目录添加style.css并实时更新css文件。
+`node-sass style.scss style.css -w style.scss`（开始监听main.scss）
+直接编辑main.scss，node-scss就会自动给main.css实时更新。
 在 scss 文件里添加以下内容
 ```
 @function px( $px ){
@@ -41,5 +41,15 @@ $designWidth : 640; // 640是设计稿的宽度，设计师给的。这样好像
   font-size: 1.2em;
 }
 ```
-在终端：`cat ~/desktop/scss-demo/css/style.css`，可看到变化，SCSS将px变成了rem放入了css中。
+可看到css变化，SCSS将px变成了rem放入了css中。
 **若不使用SCSS的话，我们每次将px转化为rem都要自己去算，使用SCSS可以帮我们算**
+
+# 4. 语法
+```
+.topNavBar{
+  nav{
+    background: red;
+  }
+}
+```
+

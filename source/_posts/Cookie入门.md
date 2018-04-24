@@ -19,9 +19,15 @@ tags:
 # 3. 前端永远不要读写cookie
 前端用localStorage
 
-# 4. 设置cookie
-```
-cookie.setMaxAge(0);//不记录cookie
-cookie.setMaxAge(-1);//会话级cookie，关闭浏览器失效
-cookie.setMaxAge(60*60);//过期时间为1小时
-```
+# 4. 设置cookie过期时间
+1. setMaxAge
+    ```
+    cookie.setMaxAge(0);//不记录cookie
+    cookie.setMaxAge(-1);//会话级cookie，关闭浏览器失效
+    cookie.setMaxAge(60*60);//过期时间为1小时
+    ```
+2. 过时了的expires
+    ```
+    Set-Cookie: name=Nicholas; expires=Sat, 02 May 2009 23:38:25 GMT
+    //星期六 5月2号 2009年 23:38:25时过期
+    ```
